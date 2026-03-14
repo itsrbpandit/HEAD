@@ -1,10 +1,10 @@
-# 🗿 HEAD
+# 🤯 HEAD
 
-> A list of everything that \*could\* go in the `<head>` of your document
+> A simple guide to HTML `<head>` elements
 
-[![Contributors](https://img.shields.io/github/contributors/joshbuchea/head.svg?style=flat-square)](https://github.com/joshbuchea/HEAD/graphs/contributors)
-[![CC0](https://img.shields.io/badge/license-CC0-green.svg?style=flat-square)](https://creativecommons.org/publicdomain/zero/1.0/)
-[![Follow @joshbuchea on Twitter](https://img.shields.io/badge/Follow_@joshbuchea-blue?logo=twitter&logoColor=white&style=flat-square)](https://twitter.com/joshbuchea)
+[![Contributors](https://img.shields.io/github/contributors/joshbuchea/head.svg?style=for-the-badge)](https://github.com/joshbuchea/HEAD/graphs/contributors)
+[![CC0](https://img.shields.io/badge/license-CC0-green.svg?style=for-the-badge)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![Follow @joshbuchea on Mastodon](https://img.shields.io/badge/Follow_@joshbuchea-purple?logo=mastodon&logoColor=white&style=for-the-badge)](https://hachyderm.io/@joshbuchea)
 
 ## Table of Contents
 
@@ -56,16 +56,13 @@ Below are the essential elements for any web document (websites/apps):
 <title>Page Title</title>
 ```
 
-**meta charset** - defines the encoding of the website, utf-8 is the standard
+`meta charset` - defines the encoding of the website, `utf-8` is the standard
 
-**meta name="viewport"** - viewport settings related to mobile responsiveness
+`meta name="viewport"` - viewport settings related to mobile responsiveness
 
-**width=device-width** means that it will use the physical width of the device (instead of zooming out) which is good with mobile friendly pages
+`width=device-width` - use the physical width of the device (great for mobile!)
 
-**initial-scale=1** is the initial zoom, 1 means no zoom
-
-
-**[⬆ back to top](#table-of-contents)**
+`initial-scale=1` - the initial zoom, 1 means no zoom
 
 ## Elements
 
@@ -104,8 +101,6 @@ These elements provide information for how a document should be perceived, and r
   <!-- No JS alternative -->
 </noscript>
 ```
-
-**[⬆ back to top](#table-of-contents)**
 
 ## Meta
 
@@ -179,14 +174,15 @@ These elements provide information for how a document should be perceived, and r
 <meta name="geo.position" content="latitude;longitude">
 <meta name="geo.region" content="country[-state]"><!-- Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
 <meta name="geo.placename" content="city/town"><!-- eg. content="New York City" -->
+
+<!-- Web Monetization https://webmonetization.org/docs/getting-started -->
+<meta name="monetization" content="$paymentpointer.example">
 ```
 
 - 📖 [Meta tags that Google understands](https://support.google.com/webmasters/answer/79812?hl=en)
 - 📖 [WHATWG Wiki: MetaExtensions](https://wiki.whatwg.org/wiki/MetaExtensions)
 - 📖 [ICBM on Wikipedia](https://en.wikipedia.org/wiki/ICBM_address#Modern_use)
 - 📖 [Geotagging on Wikipedia](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
-
-**[⬆ back to top](#table-of-contents)**
 
 ## Link
 
@@ -262,8 +258,6 @@ These elements provide information for how a document should be perceived, and r
 
 - 📖 [Link Relations](https://www.iana.org/assignments/link-relations/link-relations.xhtml)
 
-**[⬆ back to top](#table-of-contents)**
-
 ## Icons
 
 ```html
@@ -285,12 +279,11 @@ These elements provide information for how a document should be perceived, and r
 - 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
 - 📖 [Icons & Browser Colors](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
 
-**[⬆ back to top](#table-of-contents)**
-
 ## Social
 
 ### Facebook Open Graph
-> Most content is shared to Facebook as a URL, so it's important that you mark up your website with Open Graph tags to take control over how your content appears on Facebook. [More about Facebook Open Graph Markup](https://developers.facebook.com/docs/sharing/webmasters#markup) 
+
+> Most content is shared to Facebook as a URL, so it's important that you mark up your website with Open Graph tags to take control over how your content appears on Facebook. [More about Facebook Open Graph Markup](https://developers.facebook.com/docs/sharing/webmasters#markup)
 
 ```html
 <meta property="fb:app_id" content="123456789">
@@ -309,6 +302,7 @@ These elements provide information for how a document should be perceived, and r
 - 🛠 Test your page with the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
 
 ### Twitter Card
+
 > With Twitter Cards, you can attach rich photos, videos and media experiences to Tweets, helping to drive traffic to your website. [More about Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
 
 ```html
@@ -326,7 +320,9 @@ These elements provide information for how a document should be perceived, and r
 - 🛠 Test your page with the [Twitter Card Validator](https://cards-dev.twitter.com/validator)
 
 ### Twitter Privacy
+
 If you embed tweets in your website, Twitter can use information from your site to tailor content and suggestions to Twitter users. [More about Twitter privacy options](https://dev.twitter.com/web/overview/privacy#what-privacy-options-do-website-publishers-have).
+
 ```html
 <!-- disallow Twitter from using your site's info for personalization purposes -->
 <meta name="twitter:dnt" content="on">
@@ -346,7 +342,8 @@ If you embed tweets in your website, Twitter can use information from your site 
 
 **Note:** These meta tags require the `itemscope` and `itemtype` attributes to be added to the `<html>` tag.
 
-- 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
+- 📖 [Getting Started - schema.org](https://schema.org/docs/gs.html)
+- 🛠 Test your page with the [Rich Results Test](https://search.google.com/test/rich-results)
 
 ### Pinterest
 
@@ -394,9 +391,16 @@ Users share web pages to qq wechat will have a formatted message
 <meta itemprop="image" content="http://imgcache.qq.com/qqshow/ac/v4/global/logo.png">
 <meta name="description" itemprop="description" content="share content">
 ```
+
 - 📖 [Code Format Docs](http://open.mobile.qq.com/api/mqq/index#api:setShareInfo)
 
-**[⬆ back to top](#table-of-contents)**
+### Fediverse
+
+Some Fediverse software such as Mastodon allow you to put your Fediverse handle in a meta tag which will show up in embeds to your website. In addition to the tag you will also need to add your domain to the list of allowed websites in "Settings -> Public profile -> Verification -> Author attribution" (for Mastodon).
+
+```html
+<meta name="fediverse:creator" content="@handle@example.org">
+```
 
 ## Browsers / Platforms
 
@@ -485,8 +489,6 @@ Minimum required xml markup for `browserconfig.xml`:
 
 - 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426.aspx)
 
-**[⬆ back to top](#table-of-contents)**
-
 ## Browsers (Chinese)
 
 ### 360 Browser
@@ -536,8 +538,6 @@ Minimum required xml markup for `browserconfig.xml`:
 
 - 📖 [UC Browser Docs](https://www.uc.cn/download/UCBrowser_U3_API.doc)
 
-**[⬆ back to top](#table-of-contents)**
-
 ## App Links
 
 ```html
@@ -555,16 +555,12 @@ Minimum required xml markup for `browserconfig.xml`:
 <meta property="al:web:url" content="https://applinks.org/documentation">
 ```
 
-- 📖 [App Links](https://applinks.org/documentation/)
-
-**[⬆ back to top](#table-of-contents)**
+- 📖 [App Links](https://developers.facebook.com/docs/applinks)
 
 ## Other Resources
 
 - 📖 [HTML5 Boilerplate Docs: The HTML](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md)
 - 📖 [HTML5 Boilerplate Docs: Extend and customize](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md)
-
-**[⬆ back to top](#table-of-contents)**
 
 ## Related Projects
 
@@ -573,17 +569,14 @@ Minimum required xml markup for `browserconfig.xml`:
 - [head-it](https://github.com/hemanth/head-it) - CLI interface for `HEAD` snippets
 - [vue-head](https://github.com/ktquez/vue-head) - Manipulating the meta information of the `HEAD` tag for Vue.js
 
-**[⬆ back to top](#table-of-contents)**
-
 ## Other Formats
 
 - 📄 [PDF](https://gitprint.com/joshbuchea/HEAD/blob/master/README.md)
 
-**[⬆ back to top](#table-of-contents)**
-
 ## 🌐 Translations
 
 - 🇮🇩 [Bahasa](https://github.com/rijdz/HEAD)
+- 🇧🇩 [Bengali](https://github.com/AveyBD/HEAD)
 - 🇧🇷 [Brazilian Portuguese](https://github.com/Webschool-io/HEAD)
 - 🇨🇳 [Chinese (Simplified)](https://github.com/Amery2010/HEAD)
 - 🇩🇪 [German](https://github.com/Shidigital/HEAD)
@@ -593,8 +586,7 @@ Minimum required xml markup for `browserconfig.xml`:
 - 🇷🇺 [Russian/Русский](https://github.com/Konfuze/HEAD)
 - 🇪🇸 [Spanish](https://github.com/alvaroadlf/HEAD)
 - 🇹🇷 [Turkish/Türkçe](https://github.com/mkg0/HEAD)
-
-**[⬆ back to top](#table-of-contents)**
+- 🇺🇦 [Ukrainian](https://github.com/Shramkoweb/HEAD)
 
 ## 🤝 Contributing
 
@@ -606,9 +598,11 @@ The **HEAD** repository consists of two branches:
 
 #### 1. `master`
 
-This branch consists of the `README.md` file that is automatically reflected on the [htmlhead.dev](https://htmlhead.dev/) website. All changes to the content of the cheat sheet as such should be directed to this file.
+This branch consists of the `README.md` file that is reflected on the [htmlhead.dev](https://htmlhead.dev/) website. All changes to the content of the guide should be made in this file.
 
 Please follow these steps for pull requests:
+
+{:.list-style-default}
 
 - Modify only one tag, or one related set of tags at a time
 - Use double quotes on attributes
@@ -617,23 +611,34 @@ Please follow these steps for pull requests:
 
 #### 2. `gh-pages`
 
-This branch is responsible for the [htmlhead.dev](https://htmlhead.dev/) website. We use [Jekyll](https://jekyllrb.com/) to deploy the `README.md` Markdown file through [GitHub Pages](https://pages.github.com/). All website related modifications must be directed here.
+This branch is responsible for the [htmlhead.dev](https://htmlhead.dev/) website. We use [Jekyll](https://jekyllrb.com/) to deploy the `README.md` markdown file to [GitHub Pages](https://pages.github.com/). All website related modifications should be made in this branch.
 
-You may want to go through the [Jekyll Docs](https://jekyllrb.com/docs/home/) and understand how Jekyll works before working on this branch.
+You may find it helpful to review the [Jekyll Docs](https://jekyllrb.com/docs/home/) and understand how Jekyll works before working in this branch.
 
-### Contributors
+## 🌟 Contributors
 
-Check out all the super awesome [contributors](https://github.com/joshbuchea/HEAD/graphs/contributors).
+Check out all the super awesome [contributors](https://github.com/joshbuchea/HEAD/graphs/contributors) 🤩
 
 ## 👤 Author
 
 **Josh Buchea**
 
-- Twitter: [@joshbuchea](https://twitter.com/joshbuchea)
-- Github: [@joshbuchea](https://github.com/joshbuchea)
+- GitHub: [@joshbuchea](https://github.com/joshbuchea)
+- Mastodon: [@joshbuchea@hachyderm.io](https://hachyderm.io/@joshbuchea)
+
+## 💛 Support
+
+If this project was helpful for you or your organization, please considering supporting my work directly:
+
+- 💛 [Sponsor me on GitHub](https://github.com/sponsors/joshbuchea)
+- ⭐️ [Star this project on GitHub](https://github.com/joshbuchea/HEAD)
+- 🐙 [Follow me on GitHub](https://github.com/joshbuchea)
+- 🐘 [Follow me on Mastodon](https://hachyderm.io/@joshbuchea)
+
+Everything helps, thanks! 🙏
+
+— Josh
 
 ## 📝 License
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-**[⬆ back to top](#table-of-contents)**
